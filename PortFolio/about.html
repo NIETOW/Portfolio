@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Wylan Nieto - À propos</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 style="color: white;">Portfolio Wylan Nieto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button onclick="toggleTheme()">Theme</button>
+    </header>
+
+    <section id="presentation">
+        <h2>À propos de moi</h2>
+        <div class="presentation">
+            <div class="presentation-banner">
+            <h3 style="margin-bottom: 15px;">Cliquez sur l'image ci-dessous pour voir mon CV</h3>
+            <a href="PDF/CV.pdf"><img src="images/photo tete.jpg" alt="About" style="border-radius: 20%;"></a>
+            </div>
+            <div class="presentation-info">
+                <h3>Qui suis-je ?</h3>
+                <p>Je m'appelle Wylan Nieto. Je suis actuellement étudiant en deuxième année de BTS SIO option SLAM après avoir obtenu un Bac Pro SN option RISC avec mention assez bien. Passionné d'informatique depuis mon plus jeune âge, je me suis rapidement tourné vers le développement web. J'apprécie particulièrement la création d'applications et de sites web interactifs.</p>
+            </div>
+        </div>
+
+        <div class="presentation">
+            
+            <div class="presentation-info">
+                <h3>Experiences Professionnelles</h3>
+                <p>Mon parcours professionnel comprend des expériences variées, du service client à la préparation alimentaire chez Subway, à l'assistance informatique chez Xefi et Bert, ainsi qu'une assistance administrative dans le transport routier. J'ai aussi acquis des compétences en développement web avec Python Django et CSS TailwindCSS lors d'un stage chez un freelance. En Deuxième année de BTS chez Gravure et Tampons, j'ai optimisé le référencement de leurs sites PHP reliés à MySQL via DBeaver pour attirer plus de clients.</p>
+            </div>
+            <div class="presentation-banner">
+            <a href="https://www.linkedin.com/in/wylan-nieto-1ab124210/"><img src="images\experiences.png" alt="Certification 2"></a>
+            </div>
+        </div>
+
+        <div class="presentation">
+            <div class="presentation-banner">
+            <a href="https://github.com/NIETOW"><img src="images/dossier.png" alt="Certification 3"></a>
+            </div>
+            <div class="presentation-info">
+                <h3>Projets réalisés</h3>
+                <p>En plus des expériences professionnelles, mon parcours au cours du BTS m'a également offert l'opportunité de réaliser divers <a href="projects.html">projets</a>. J'ai travaillé sur des projets en réseau, en développement (utilisant des langages tels que Java et Python), en cybersécurité, ainsi que sur des applications Android. Ces projets m'ont permis d'approfondir mes compétences dans divers domaines de l'informatique et d'élargir mes connaissances pratiques.</p>
+            </div>
+        </div>
+
+        <div class="presentation">
+            
+            <div class="presentation-info">
+                <h3>Centres d'intérêts</h3>
+                <p>Je suis passionné par le développement informatique, notamment dans le domaine du web où je me spécialise particulièrement avec Python, un langage que j'apprécie pour sa polyvalence et sa simplicité. En parallèle, mon intérêt pour les nouvelles technologies m'a conduit à explorer différents domaines, de la robotique aux jeux vidéo. La robotique m'intrigue par ses applications innovantes et son potentiel à transformer notre quotidien, tandis que les jeux vidéo m'intéressent autant pour leur aspect ludique que pour leur influence sur la culture et la technologie. Ces passions variées nourrissent ma curiosité et me motivent à rester à l'affût des dernières avancées technologiques.</p>
+            </div>
+            <div class="presentation-banner">
+            <img src="images/devscreen.png" alt="Certification 3"></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: white;">&copy; 2024 Portfolio Wylan Nieto</p>
+    </footer>
+    <script>
+        // Fonction pour basculer le thème
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("dark-mode"); // Basculer le thème dark
+    
+            // Enregistrer l'état du thème dans le localStorage
+            if(body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark"); // Enregistrer comme mode sombre
+            } else {
+                localStorage.setItem("theme", "light"); // Enregistrer comme mode clair
+            }
+        }
+    
+        // Fonction pour charger le thème
+        function loadTheme() {
+            var storedTheme = localStorage.getItem("theme"); // Obtenir l'état du thème stocké
+            if(storedTheme === "dark") {
+                document.body.classList.add("dark-mode"); // Appliquer le mode sombre si enregistré
+            }
+        }
+    
+        // Appeler loadTheme au chargement de la page
+        window.onload = loadTheme;
+    </script>
+    
+</body>
+</html>
