@@ -182,7 +182,6 @@ section {
     height: auto; /* Garantit que l'image conserve ses proportions */
 }
 
-
 #projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Deux colonnes égales */
@@ -641,50 +640,3 @@ a:hover {
 .dark-mode .presentation-info a:hover {
     color: #6d00ba; /* Couleur du lien au survol en mode sombre */
 }
-
-/* CSS pour les jauges de compétences */
-.jauge-container {
-    width: 65%; /* Largeur de la jauge */
-    height: 20px; /* Hauteur de la jauge */
-    border-radius: 10px; /* Bordure arrondie */
-    background-color: #f0f0f0; /* Couleur de fond */
-    position: relative; /* Position relative */
-    overflow: hidden; /* Masquer le débordement */
-    margin-bottom: 20px;
-    margin: 0 auto; /* Centrer horizontalement */
-}
-
-.jauge {
-    height: 100%; /* Hauteur de la jauge */
-    border-radius: 10px; /* Bordure arrondie */
-    width: 100%; /* Largeur de la jauge */
-    background-color: #4CAF50; /* Couleur de la jauge */
-    margin-bottom: 20px;
-    transition: width 1s ease-in-out; /* Animation de la largeur */
-}
-
-.pourcentage {
-    position: absolute; /* Position absolue */
-    top: -20px; /* Décalage vers le haut pour la compétence */
-    left: 50%; /* Position au milieu horizontalement */
-    transform: translateX(-50%); /* Décalage horizontal pour centrer */
-    color: white; /* Couleur du texte */
-}
-
-/* Changement de couleur en fonction du pourcentage */
-.jauge-container[data-pourcentage="0-25"] .jauge {
-    background-color: #FF5733; /* Rouge */
-}
-
-.jauge-container[data-pourcentage="26-50"] .jauge {
-    background-color: #FFA533; /* Orange */
-}
-
-.jauge-container[data-pourcentage="51-75"] .jauge {
-    background-color: #FFD633; /* Jaune */
-}
-
-.jauge-container[data-pourcentage="76-100"] .jauge {
-    background-color: #4CAF50; /* Vert */
-}
-
