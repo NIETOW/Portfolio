@@ -52,6 +52,29 @@
     </footer>
 
     <script>
+        // Fonction pour basculer le thème
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("dark-mode"); // Basculer le thème dark
+
+            // Enregistrer l'état du thème dans le localStorage
+            if(body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark"); // Enregistrer comme mode sombre
+            } else {
+                localStorage.setItem("theme", "light"); // Enregistrer comme mode clair
+            }
+        }
+
+        // Fonction pour charger le thème
+        function loadTheme() {
+            var storedTheme = localStorage.getItem("theme"); // Obtenir l'état du thème stocké
+            if(storedTheme === "dark") {
+                document.body.classList.add("dark-mode"); // Appliquer le mode sombre si enregistré
+            }
+        }
+
+        // Appeler loadTheme au chargement de la page
+        window.onload = loadTheme;
 
 // Fonction pour remplir les barres de progression
 function fillProgressBars() {
