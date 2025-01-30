@@ -1,84 +1,94 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Wylan Nieto</title>
+    <title>Portfolio Wylan Nieto - Accueil</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeToggle = document.getElementById("theme-toggle");
-            const body = document.body;
-
-            if (localStorage.getItem("theme") === "dark") {
-                body.classList.add("dark-mode");
-            }
-
-            themeToggle.addEventListener("click", function () {
-                body.classList.toggle("dark-mode");
-                localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
-            });
-        });
+        function toggleTheme() {
+            var body = document.body;
+            body.classList.toggle("dark-mode");
+        }
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Wylan Nieto</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="projects.html">Projets</a></li>
-                    <li><a href="certifications.html">Certifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" class="theme-btn">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
+        <h1 style="color: white;">Portfolio Wylan Nieto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos de moi</a></li>
+                <li><a href="projects.html">Projets</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <!--<li><a href="competences.html">Compétences</a></li>-->                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button onclick="toggleTheme()">Theme</button>
     </header>
 
-    <main class="container">
-        <section class="hero">
+    <div id="main-content">
+        <section id="home">
             <h2>Bienvenue sur mon portfolio</h2>
-            <p>Découvrez mon parcours, mes réalisations et mes compétences.</p>
+            <div class="links-container">
+                <!-- Links to other pages with minimalist design -->
+                <a href="about.html" class="home-link">
+                    <img src="images/about.png" alt="À propos" class="home-image">
+                    <span class="link-text">À propos</span>
+                    <p class="link-description">Découvrez qui je suis</p>
+                </a>
+                <a href="projects.html" class="home-link">
+                    <img src="images/projects.png" alt="Projets" class="home-image">
+                    <span class="link-text">Projets</span>
+                    <p class="link-description">Explorez mes réalisations</p>
+                </a>
+                <a href="certifications.html" class="home-link">
+                    <img src="images/certifications.png" alt="Certifications" class="home-image">
+                    <span class="link-text">Certifications</span>
+                    <p class="link-description">Consultez mes certifications</p>
+                </a>
+                <a href="contact.html" class="home-link">
+                    <img src="images/Contact.png" alt="Contact" class="home-image">
+                    <span class="link-text">Contact</span>
+                    <p class="link-description">Prenez contact avec moi</p>
+                </a>
+                <a href="PDF/CV.pdf" class="home-link">
+                    <img src="images/cv.png" alt="Contact" class="home-image">
+                    <span class="link-text">CV</span>
+                    <p class="link-description">Consultez mon CV</p>
+                </a>
+            </div>
         </section>
-        <section class="grid">
-            <a href="about.html" class="card">
-                <i class="fas fa-user"></i>
-                <h3>À propos</h3>
-                <p>Découvrez qui je suis</p>
-            </a>
-            <a href="projects.html" class="card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Projets</h3>
-                <p>Explorez mes réalisations</p>
-            </a>
-            <a href="certifications.html" class="card">
-                <i class="fas fa-certificate"></i>
-                <h3>Certifications</h3>
-                <p>Consultez mes certifications</p>
-            </a>
-            <a href="contact.html" class="card">
-                <i class="fas fa-envelope"></i>
-                <h3>Contact</h3>
-                <p>Prenez contact avec moi</p>
-            </a>
-            <a href="PDF/CV.pdf" class="card">
-                <i class="fas fa-file-alt"></i>
-                <h3>CV</h3>
-                <p>Consultez mon CV</p>
-            </a>
-        </section>
-    </main>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Wylan Nieto | Tous droits réservés</p>
-        </div>
+        <p style="color: white;">&copy; 2024 Portfolio Wylan Nieto</p>
     </footer>
 </body>
+<script>
+    // Fonction pour basculer le thème
+    function toggleTheme() {
+        var body = document.body;
+        body.classList.toggle("dark-mode"); // Basculer le thème dark
+
+        // Enregistrer l'état du thème dans le localStorage
+        if(body.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark"); // Enregistrer comme mode sombre
+        } else {
+            localStorage.setItem("theme", "light"); // Enregistrer comme mode clair
+        }
+    }
+
+    // Fonction pour charger le thème
+    function loadTheme() {
+        var storedTheme = localStorage.getItem("theme"); // Obtenir l'état du thème stocké
+        if(storedTheme === "dark") {
+            document.body.classList.add("dark-mode"); // Appliquer le mode sombre si enregistré
+        }
+    }
+
+    // Appeler loadTheme au chargement de la page
+    window.onload = loadTheme;
+</script>
+
 </html>
